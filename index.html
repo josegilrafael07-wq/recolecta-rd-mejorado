@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECOLECTA-RD</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="background-blur"></div>
+    <div class="background-overlay"></div>
+    
+    <div class="foreground-content">
+        <header>
+            <nav>
+                <div class="logo">♻️ RECOLECTA-RD</div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#reportes">Reportes</a></li>
+                    <li><a href="#contactos">Contactos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="hero" class="hero">
+                <h1>🌿 Bienvenido a RECOLECTA-RD</h1>
+                <p style="font-size: 1.15em; color: #2d7a3d;">
+                    Tu solución confiable para la recolección de residuos en la República Dominicana.
+                </p>
+                <button class="cta-button" id="btnReportarProblematica">
+                    Reportar problemáticas
+                </button>
+                <div id="feedback"></div>
+            </section>
+
+            <section id="servicios">
+                <h2>🌱 Nuestros Servicios</h2>
+                <div class="card-set">
+                    <div class="card">
+                        <span style="font-size: 3em;">♻️</span>
+                        <h3>Recolección de Residuos</h3>
+                        <p>Solicita recolección a domicilio de residuos reciclables y no reciclables.</p>
+                        <button id="btnSolicitarRecoleccion">Solicitar Recolección</button>
+                    </div>
+                    <div class="card">
+                        <span style="font-size: 3em;">📍</span>
+                        <h3>Centros de Acopio</h3>
+                        <p>Visualiza en el mapa los puntos para llevar materiales reciclables.</p>
+                        <button id="btnVerMapa">Ver Mapa</button>
+                    </div>
+                    <div class="card">
+                        <span style="font-size: 3em;">🚯</span>
+                        <h3>Limpieza de Espacios</h3>
+                        <p>Coordinamos brigadas para recuperar áreas afectadas por residuos.</p>
+                        <button id="btnCoordenarBrigada">Coordinar Brigada</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reportes">
+                <h2>📋 Reporte de Problemáticas Ambientales</h2>
+                
+                <div style="margin-bottom: 18px;">
+                    <button id="btnVerReportes">Ver Reportes</button>
+                    <button id="btnAgregarReporte">Agregar Reporte</button>
+                    <button id="btnActualizar">Actualizar Lista</button>
+                </div>
+
+                <div>
+                    <label for="ciudad">Ciudad:</label>
+                    <select id="ciudad" name="ciudad">
+                        <option value="Todas las ciudades">Todas las ciudades</option>
+                    </select>
+                </div>
+
+                <div id="formularioReporte" style="display: none; margin-top: 18px;">
+                    <h3>Nuevo Reporte Ambiental</h3>
+                    <input type="text" id="tituloReporte" placeholder="Título del reporte">
+                    <textarea id="descripcionReporte" placeholder="Descripción detallada del problema ambiental" rows="4"></textarea>
+                    <button id="btnEnviarReporte">Enviar Reporte</button>
+                </div>
+
+                <div id="listaReportes" style="margin-top: 20px;"></div>
+
+                <h3 style="margin-top: 30px;">🗺️ Mapa Interactivo de República Dominicana</h3>
+                <div id="map" style="width: 100%; height: 450px; margin-top: 18px;"></div>
+            </section>
+
+            <section id="contactos">
+                <h2>📞 Contacto</h2>
+                <div class="card-set">
+                    <div class="card">
+                        <span style="font-size: 2.5em;">📧</span>
+                        <h4>Correo Electrónico</h4>
+                        <p>recolectard07@gmail.com</p>
+                    </div>
+                    <div class="card">
+                        <span style="font-size: 2.5em;">📞</span>
+                        <h4>Teléfono</h4>
+                        <p>(809) 880-3436</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            © 2025 RECOLECTA-RD. Todos los derechos reservados.
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/background-slider.js"></script>
+    <script src="js/ui-interactions.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
